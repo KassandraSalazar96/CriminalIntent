@@ -74,7 +74,7 @@ public class CrimeListFragment extends Fragment {
             Intent intent = CrimeActivity.newIntent(getActivity(),mCrime.getId());
             startActivity(intent);
             Intent intent1 = new Intent(getActivity(), CrimeActivity.class);
-            startActivity(intent);
+            startActivity(intent1);
             Toast.makeText(getActivity(),
                     "se hizo clic sobre" + mCrime.getTitle(),Toast.LENGTH_SHORT).show();
         }
