@@ -71,10 +71,10 @@ public class CrimeListFragment extends Fragment {
         public void onClick(View view) {
             Intent intent = CrimeActivity.newIntent(getActivity(),mCrime.getId());
             startActivity(intent);
-            //Intent intent = new Intent(getActivity(), CrimeActivity.class);
-            //startActivity(intent);
-            //Toast.makeText(getActivity(),
-                   // "se hizo clic sobre" + mCrime.getTitle(),Toast.LENGTH_SHORT).show();
+            Intent intent1 = new Intent(getActivity(), CrimeActivity.class);
+            startActivity(intent);
+            Toast.makeText(getActivity(),
+                    "se hizo clic sobre" + mCrime.getTitle(),Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -87,8 +87,9 @@ public class CrimeListFragment extends Fragment {
         @Override
         public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-            View view = layoutInflater.inflate(R.layout.list_item_crime,
-                    parent,false);
+            View view = layoutInflater.inflate(
+                    android.R.layout.simple_list_item_1,
+                    parent, false);
             return new CrimeHolder(view);
         }
 
