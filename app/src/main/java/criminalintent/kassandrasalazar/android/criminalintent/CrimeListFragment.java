@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+
+
 import java.util.List;
 
 /**
@@ -87,9 +89,7 @@ public class CrimeListFragment extends Fragment {
         @Override
         public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-            View view = layoutInflater.inflate(
-                    android.R.layout.simple_list_item_1,
-                    parent, false);
+            View view = layoutInflater.inflate(R.layout.list_item_crime, parent, false);
             return new CrimeHolder(view);
         }
 
@@ -97,7 +97,7 @@ public class CrimeListFragment extends Fragment {
         public void onBindViewHolder(CrimeHolder holder, int position) {
 
             Crime crime = mCrimes.get(position);
-            holder.bindCrime(crime);
+            holder.mTitleTextView.setText(crime.getTitle());
         }
 
         @Override
